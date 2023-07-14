@@ -1,0 +1,255 @@
+.menu-bottom{
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+
+    margin: 10px;
+
+    border-radius: 0px 15px 15px 15px;
+    background-color: #383434;
+
+    color: white;
+    font-family: "Arial", sans-serif;
+    z-index: 10;
+
+    height: 18%;
+
+    transition: all 0.5s ease;
+}
+
+.menu-bottom-info{
+    position: absolute;
+    right: 0;
+
+    padding: 10px 10px 1px 10px;
+
+    max-width: 60%;
+
+    font-size: 14px;
+    background-color: #352e36;
+    border: 5px solid #383434;
+    border-radius: 25px;
+
+    box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.75);
+
+    transition: all 0.5s ease;
+    z-index: 1;
+}
+
+.show{
+    top: -80px;
+    opacity: 1;
+    visibility: visible;
+}
+
+.hide{
+    top: 0px;
+    opacity: 0;
+    visibility: hidden;
+}
+
+.menu-bottom-content{
+    position: relative;
+
+    border-radius: 15px;
+
+    display: flex;
+    flex-direction: column;
+
+    height: 100%;
+
+    transition: all 0.5s ease;
+}
+
+.menu-top-info{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    height: 30%;
+    margin: 5px;
+    border-radius: 15px;
+    background-color: black;
+}
+
+.stat-info{
+    margin-left: 10px;
+}
+
+.title-tabs{
+    position: absolute;
+
+    display: flex;
+    top: -40px;
+    left: 0px;
+
+    background-color: #272323;
+
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
+}
+
+.menu-top-lumty{
+    position: absolute;
+    top: -60px;
+    z-index: 2;
+}
+
+.title-tab {
+    position: relative;
+    padding: 10px 20px;
+
+    font-size: 14px;
+    color: white;
+    cursor: pointer;
+    opacity: 0.5;
+    transition: all 0.5s ease;
+}
+
+.title-tab:not(:last-child){
+    border-right: 2px solid rgba(0, 0, 0, 0.5);
+}
+
+.active {
+    opacity: 1;
+    background-color: #383434;
+    border-radius: 15px 15px 0px 0px;
+    border-bottom: 5px solid #0071e2;
+}
+
+.mb-section-list{
+    display: flex;
+    flex-direction: row;
+    justify-content: start;
+    align-items: center;
+    overflow-x: scroll;
+
+    width: 100%;
+    height: 100%;
+}
+
+.btnMenuBm {
+    /* Declare var colorPrimary*/
+    --colorPrimary: #0071e2;
+    --colorSecondary: #000000;
+    --colorBg: #121212;
+
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+
+    width: 100px;
+    min-width: 100px;
+    height: 60px;
+    margin: 0 5px;
+
+    background: var(--colorSecondary);
+
+    font-family: inherit;
+    font-size: 14px;
+    color: #ffffff;
+
+    border: none;
+    cursor: pointer;
+    box-shadow: 0 0.25em var(--colorPrimary);
+    border-radius: 0.4em;
+
+    transition: all 0.1s ease;
+}
+
+.btnMenuBm::after {
+    content: attr(prize);
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    top: 0;
+    left: 0;
+    width: 0;
+    height: 100%;
+    opacity: 0;
+    border-radius: inherit;
+    background: var(--colorPrimary);
+    transition: all 0.2s ease;
+}
+
+.btnMenuBm:hover::after {
+    /* border: 0.1em solid var(--colorPrimary); */
+    opacity: 1;
+    width: 50%;
+}
+
+.btnMenuBm:active {
+    transform: translateY(0.1em);
+    box-shadow: 0 0 var(--colorPrimary);
+}
+  
+
+/* ==================== */
+/* Scrollbar */
+/* ==================== */
+
+/* width */
+::-webkit-scrollbar {
+    width: 5px;
+    height: 5px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+    background: #202123;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+    background: azure;
+    border-radius: 10px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+    background: rgb(201, 207, 212);
+}
+
+/* ==================== */
+/* Tabs */
+/* ==================== */
+
+.bloc-tabs {
+    display: flex;
+}
+
+.tabs {
+    padding: 15px;
+    text-align: center;
+    width: 50%;
+    background: rgba(128, 128, 128, 0.075);
+    cursor: pointer;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.274);
+    box-sizing: content-box;
+    position: relative;
+    outline: none;
+}
+
+.tabs:not(:last-child){
+    border-right: 1px solid rgba(0, 0, 0, 0.274);
+}
+  
+.active-tabs  {
+    background: white;
+    border-bottom: 1px solid transparent;
+}
+  
+.active-tabs::before {
+    content: "";
+    display: block;
+    position: absolute;
+    top: -5px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: calc(100% + 2px);
+    height: 5px;
+    background: rgb(88, 147, 241);
+}

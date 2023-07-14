@@ -1,0 +1,58 @@
+.circle {
+    position: absolute;
+    border: solid 2px black;
+    width: 60px; 
+    height: 60px; 
+    pointer-events: none;
+    border-radius: 50%;
+    -webkit-transform: translateZ(0);
+    transform: translateZ(0);
+    background: transparent;    
+}
+
+.circleBaby{
+    position: absolute;
+    width: 30px;
+    height: 30px;
+    border: solid 2px black;
+    border-radius: 50%;
+    -webkit-transform: translateZ(0);
+    transform: translateZ(0);
+    pointer-events: none;
+}
+
+@keyframes circleGrow {
+    0% {
+        transform: scale(0.5);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+@keyframes pulse {
+    0% {}
+    45% {
+        transform: scale(1);
+        opacity: 1;
+    }
+    46% {
+        transform: scale(1.5);
+        opacity: 0.5;
+    }
+    55% {
+        transform: scale(1);
+        opacity: 1;
+    }
+    100% {}
+}
+
+@media (prefers-reduced-motion: no-preference) {
+    .circle {
+        animation: pulse infinite 2s linear;
+    }
+    .circleBaby {
+        animation: circleGrow infinite 1s alternate;
+    }
+}
+  

@@ -1,0 +1,189 @@
+body{
+    background-color: #121212;
+}
+
+.inputWrap {
+    border: 2px solid #e8e8e8;
+    padding: 15px 0px;
+    border-radius: 10px;
+    background-color: #212121;
+    font-size: large;
+    font-weight: bold;
+    text-align: center;
+    color: rgb(190, 185, 185);
+    transition: all 0.5s;
+}
+
+.inputWrap:disabled{
+    opacity: 0.5;
+}
+
+/* Focus on input when this is not invalid */
+.inputWrap:focus:not(:invalid) {
+    outline-color: white;
+    background-color: #212121;
+    color: #e8e8e8;
+    box-shadow: 5px 5px #888888;
+}
+.inputWrap:focus:invalid {
+    outline-color: red;
+    background-color: #212121;
+    color: red;
+    box-shadow: 5px 5px #8d4242;
+}
+
+.inputWrap:invalid {
+    animation: shakeLtoR 0.3s forwards;
+    color: red;
+    border: 2px solid red;
+}
+
+.btnJustIcon{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+}
+
+.btnJustIcon:hover:not(:disabled){
+    scale: 1.1;
+}
+
+.btnJustIcon:active:not(:disabled){
+    scale: 0.6;
+}
+
+.btnJustIcon:disabled{
+    opacity: 0.5;
+    pointer-events: none;
+}
+
+.btnIcon {
+    width: 150px;
+    height: 50px;
+    border-radius: 5px;
+    border: none;
+    transition: all 0.5s ease-in-out;
+    font-size: 20px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    background: #040f16;
+    color: #f5f5f5;
+    cursor: pointer;
+    transition: all 0.5s ease-in-out;
+  }
+  
+.btnIcon:hover {
+    box-shadow: 0 0 20px 0px #2e2e2e3a;
+    border: 2px solid whitesmoke;
+}
+
+.btnIcon:active {
+    scale: 0.6;
+}
+  
+.btnIcon .icon {
+    position: absolute;
+    height: 40px;
+    width: 70px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: all 0.5s;
+}
+  
+.btnIcon .text {
+    transform: translateX(55px);
+}
+  
+.btnIcon:hover .icon {
+    width: 175px;
+}
+  
+.btnIcon:hover .text {
+    transition: all 0.5s;
+    opacity: 0;
+}
+  
+.btnIcon:focus {
+    outline: none;
+}
+  
+.btnIcon:active .icon {
+    transform: scale(0.85);
+}
+
+.PlayButton{
+    padding: 10px 20px;
+    border: none;
+    font-size: 17px;
+    color: #fff;
+    border-radius: 7px;
+    letter-spacing: 4px;
+    font-weight: 700;
+    text-transform: uppercase;
+    transition: 0.5s;
+    transition-property: box-shadow;
+    background: rgb(0,140,255);
+    box-shadow: 0 0 5px rgb(0,140,255);
+    cursor: pointer;
+}
+
+.PlayButton:disabled{
+    opacity: 0.5;
+    pointer-events: none;
+}
+
+.PlayButton:hover:not(:disabled){
+    box-shadow: 0 0 25px rgb(0,140,255);
+}
+
+.divider{
+    width: 80%;
+    height: 1px;
+    border-radius: 2px;
+    background-color: rgba(255, 255, 255, 0.6);
+    margin: 20px 0;
+}
+
+.Loading{
+    z-index: 100;
+    position: fixed;
+    width: 50px;
+    height: 50px;
+    pointer-events: none;
+    transition: all 0.5s;
+    animation: rotating 2.5s linear infinite;
+}
+
+@keyframes rotating {
+    from {
+      transform: rotate(0deg);
+    }
+    to {
+      transform: rotate(360deg);
+    }
+}
+
+@keyframes shakeLtoR {
+    25% {
+      transform: translateX(5px);
+    }
+  
+    50% {
+      transform: translateX(-5px);
+    }
+  
+    75% {
+      transform: translateX(5px);
+    }
+  
+    100% {
+      transform: translateX-(5px);
+    }
+  }

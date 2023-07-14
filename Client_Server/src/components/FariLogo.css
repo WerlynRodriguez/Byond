@@ -1,0 +1,188 @@
+.FariLogo{
+    width: 170px;
+    aspect-ratio: 1;
+    border-radius: 50%;
+
+    border: 14px solid rgb(0,140,255);
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.FariLogo > div{
+    position: relative;
+    width: 40%;
+    height: 40%;
+    background-color: azure;
+    border-radius: 50%;
+    z-index: 1;
+}
+
+.FariLogo.wait > div:before {
+    content: '';
+    position: absolute;
+    top: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background: rgb(0,140,255);
+    box-shadow: 0 0 20px #3532e9, 0 0 60px #5a32e9;
+}
+
+.FariLogo.wait > div::after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background: rgb(0,140,255);
+    box-shadow: 0 0 20px #3532e9, 0 0 60px #5a32e9;
+}
+
+@keyframes lLeft{
+    0%{
+        transform: translate(0, 0);
+    }
+    30%{
+        transform: translate(-70%, 0) rotateY(-30deg);
+    }
+    50%{
+        transform: translate(-60%, -40%) rotateY(-30deg) rotateX(30deg);
+    }
+    70%{
+        transform: translate(-60%, 40%) rotateY(-30deg) rotateX(-30deg);
+    }
+    90%{
+        transform: translate(0,0);
+    }
+}
+
+@keyframes lRight{
+    0%{
+        transform: translate(0, 0);
+    }
+    30%{
+        transform: translate(70%, 0) rotateY(-30deg);
+    }
+    50%{
+        transform: translate(60%, -40%) rotateY(-30deg) rotateX(-30deg);
+    }
+    70%{
+        transform: translate(60%, 40%) rotateY(-30deg) rotateX(30deg);
+    }
+    90%{
+        transform: translate(0,0);
+    }
+
+}
+
+@keyframes lUp{
+    0%{
+        transform: translate(0, 0);
+    }
+    30%{
+        transform: translate(0%, -70%) rotateX(30deg);
+    }
+    50%{
+        transform: translate(-40%, -70%) rotateX(30deg) rotateY(-30deg);
+    }
+    70%{
+        transform: translate(40%, -70%) rotateX(30deg) rotateY(30deg);
+    }
+    90%{
+        transform: translate(0,0);
+    }
+}
+
+@keyframes lDown{
+    0%{
+        transform: translate(0, 0);
+    }
+    30%{
+        transform: translate(0%, 70%) rotateX(-30deg);
+    }
+    50%{
+        transform: translate(-40%, 70%) rotateX(-30deg) rotateY(-30deg);
+    }
+    70%{
+        transform: translate(40%, 70%) rotateX(-30deg) rotateY(30deg);
+    }
+    90%{
+        transform: translate(0,0);
+    }
+}
+
+/*Shake animation for the logo */
+@keyframes shake {
+    0% {
+        scale: 1;
+        transform: translate(1px, 1px) rotate(0deg);
+    }
+    5% {
+        transform: translate(-1px, -2px) rotate(-1deg);
+    }
+    10% {
+        transform: translate(-3px, 0px) rotate(1deg);
+    }
+    15% {
+        transform: translate(3px, 2px) rotate(0deg);
+    }
+    20% {
+        transform: translate(1px, -1px) rotate(1deg);
+    }
+    25% {
+        transform: translate(-1px, 2px) rotate(-1deg);
+    }
+    30% {
+        transform: translate(-3px, 1px) rotate(0deg);
+    }
+    35% {
+        transform: translate(3px, 1px) rotate(-1deg);
+    }
+    40% {
+        transform: translate(-1px, -1px) rotate(1deg);
+    }
+    50% {
+        scale: 0.8;
+        transform: translate(1px, 2px) rotate(0deg);
+    }
+    90% {
+        scale: 0.8;
+        transform: translate(0, 0) rotate(0deg);
+    }
+    100% {
+        scale: 1;
+        transform: translate(0, 0) rotate(-1deg);
+    }
+  }
+
+@keyframes blink{
+    0%{
+        opacity: 1;
+    }
+    10%{
+        height: 0;
+        opacity: 0;
+    }
+    20%{
+        height: 40%;
+        opacity: 1;
+    }
+}
+
+/* Keyframe for sipining the logo */
+@keyframes circle14512 {
+    0% {
+      transform: rotate(0deg);
+    }
+  
+    100% {
+      transform: rotate(360deg);
+    }
+}
